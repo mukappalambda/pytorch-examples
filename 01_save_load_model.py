@@ -7,12 +7,15 @@ y = torch.tensor([[2], [4], [6], [8]], dtype=torch.float32)
 n_samples, n_features = x.shape
 input_dim = n_features
 
+
 class LinearRegression(nn.Module):
     def __init__(self, input_dim):
         super(LinearRegression, self).__init__()
         self.lin = nn.Linear(input_dim, 1)
+
     def forward(self, x):
         return self.lin(x)
+
 
 model = LinearRegression(input_dim=input_dim)
 
@@ -42,4 +45,3 @@ second_model.eval()
 y_pred = second_model(x).detach()
 resid = (y_pred - y).mean()
 print(f"y_pred: {y_pred}; residual: {resid}")
-

@@ -21,16 +21,19 @@ print(betahat)
 
 # method 3
 def grad_descent(beta, x, y):
-    x = x.reshape(-1,)
+    x = x.reshape(
+        -1,
+    )
     n = len(y)
-    partial_0 = (-2/n) * np.sum(y - beta[0] - beta[1] * x)
-    partial_1 = (-2/n) * np.sum(x * (y - beta[0] - beta[1] * x))
+    partial_0 = (-2 / n) * np.sum(y - beta[0] - beta[1] * x)
+    partial_1 = (-2 / n) * np.sum(x * (y - beta[0] - beta[1] * x))
     return np.array([partial_0, partial_1])
+
 
 beta_next = np.random.randn(2)
 
 for _ in range(1000):
     grad = grad_descent(beta_next, x, y)
     beta_next -= 1e-2 * grad
-    
+
 print(beta_next)

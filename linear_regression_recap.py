@@ -4,7 +4,9 @@ import numpy as np
 from sklearn.datasets import make_regression
 import matplotlib.pyplot as plt
 
-x_numpy, y_numpy = make_regression(n_samples=50, n_features=1, noise=1, random_state=123)
+x_numpy, y_numpy = make_regression(
+    n_samples=50, n_features=1, noise=1, random_state=123
+)
 
 x = torch.from_numpy(x_numpy.astype(np.float32))
 y = torch.from_numpy(y_numpy.astype(np.float32))
@@ -28,13 +30,13 @@ for epoch in range(num_epochs):
     loss.backward()
     optimizer.step()
     optimizer.zero_grad()
-    
+
     if epoch % 5 == 0:
         print(loss)
 
 predicted = model(x).detach().numpy()
 print(predicted.shape)
 
-plt.plot(x_numpy, y_numpy, 'ro')
+plt.plot(x_numpy, y_numpy, "ro")
 plt.plot(x_numpy, predicted)
 plt.savefig("tmp.png")

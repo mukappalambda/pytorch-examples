@@ -3,7 +3,10 @@ import torchvision
 from torch.utils.data import Dataset, DataLoader
 from sklearn.datasets import make_regression
 
-x_numpy, y_numpy = make_regression(n_samples=500, n_features=1, noise=1, random_state=123)
+x_numpy, y_numpy = make_regression(
+    n_samples=500, n_features=1, noise=1, random_state=123
+)
+
 
 class DummyDataset(Dataset):
     def __init__(self):
@@ -17,12 +20,13 @@ class DummyDataset(Dataset):
     def __len__(self):
         return self.n_samples
 
+
 batch_size = 50
 dataset = DummyDataset()
 dataloader = DataLoader(dataset=dataset, shuffle=False, batch_size=batch_size)
 
 first_batch = torch.from_numpy(x_numpy[:batch_size, :])
-second_batch = torch.from_numpy(x_numpy[batch_size:2 * batch_size, :])
+second_batch = torch.from_numpy(x_numpy[batch_size : 2 * batch_size, :])
 
 dataiter = iter(dataloader)
 data = dataiter.next()

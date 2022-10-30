@@ -5,14 +5,18 @@ y = torch.tensor([2, 4, 6, 8], dtype=torch.float32)
 
 w = torch.tensor([0], dtype=torch.float32, requires_grad=True)
 
+
 def forward(x):
     return w * x
 
+
 def loss(y, y_pred):
-    return ((y - y_pred)**2).mean()
+    return ((y - y_pred) ** 2).mean()
+
 
 def gradient(x, y, y_pred):
-    return torch.dot(2*x, y_pred - y).mean()
+    return torch.dot(2 * x, y_pred - y).mean()
+
 
 learning_rate = 0.01
 n_iters = 20

@@ -9,6 +9,7 @@ in_features = n_features
 out_features = n_features
 # model = nn.Linear(in_features, out_features)
 
+
 class LinearRegression(nn.Module):
     def __init__(self, input_dim, output_dim):
         super(LinearRegression, self).__init__()
@@ -16,6 +17,7 @@ class LinearRegression(nn.Module):
 
     def forward(self, x):
         return self.lin(x)
+
 
 model = LinearRegression(in_features, out_features)
 

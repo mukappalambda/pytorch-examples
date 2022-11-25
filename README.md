@@ -1,5 +1,10 @@
-# Pytorch Demonstration and Experiments
+# PyTorch Examples
 
 ```bash
-pip install -r requirements.txt
+git clone git@github.com:mukappalambda/pytorch-examples.git
+```
+
+```bash
+poetry install
+# pip install -r requirements.txt
 ```

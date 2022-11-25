@@ -1,8 +1,8 @@
+import matplotlib.pyplot as plt
+import numpy as np
 import torch
 import torch.nn as nn
-import numpy as np
 from sklearn.datasets import make_regression
-import matplotlib.pyplot as plt
 
 x_numpy, y_numpy = make_regression(
     n_samples=50, n_features=1, noise=1, random_state=123

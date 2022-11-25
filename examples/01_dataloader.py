@@ -1,7 +1,7 @@
 import torch
 import torchvision
-from torch.utils.data import Dataset, DataLoader
 from sklearn.datasets import make_regression
+from torch.utils.data import DataLoader, Dataset
 
 x_numpy, y_numpy = make_regression(
     n_samples=500, n_features=1, noise=1, random_state=123

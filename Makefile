@@ -5,4 +5,4 @@ clean:
 
 .PHONY: style
 style:
-	isort --profile black . examples && black examples
+	isort --profile black src/ && black src/

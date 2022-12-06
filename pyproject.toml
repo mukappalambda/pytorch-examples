@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{include = "pytorch_examples"}]
 
 [tool.poetry.dependencies]
-python = "^3.9"
+python = "^3.8"
 torch = "^1.13.0"
 numpy = "^1.23.5"
 
